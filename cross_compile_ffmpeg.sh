@@ -2225,7 +2225,7 @@ build_mplayer() {
 
   download_and_unpack_file https://sourceforge.net/projects/mplayer-edl/files/mplayer-export-snapshot.2014-05-19.tar.bz2 mplayer-export-2014-05-19
   cd mplayer-export-2014-05-19
-    do_git_checkout https://github.com/FFmpeg/FFmpeg ffmpeg d43c303038e9bd # known compatible commit
+    do_git_checkout https://github.com/tarantinoz/FFmpeg ffmpeg d43c303038e9bd # known compatible commit
     export LDFLAGS='-lpthread -ldvdnav -ldvdread -ldvdcss' # not compat with newer dvdread possibly? huh wuh?
     export CFLAGS=-DHAVE_DVDCSS_DVDCSS_H
     do_configure "--enable-cross-compile --host-cc=cc --cc=${cross_prefix}gcc --windres=${cross_prefix}windres --ranlib=${cross_prefix}ranlib --ar=${cross_prefix}ar --as=${cross_prefix}as --nm=${cross_prefix}nm --enable-runtime-cpudetection --extra-cflags=$CFLAGS --with-dvdnav-config=$mingw_w64_x86_64_prefix/bin/dvdnav-config --disable-dvdread-internal --disable-libdvdcss-internal --disable-w32threads --enable-pthreads --extra-libs=-lpthread --enable-debug --enable-ass-internal --enable-dvdread --enable-dvdnav --disable-libvpx-lavc" # haven't reported the ldvdcss thing, think it's to do with possibly it not using dvdread.pc [?] XXX check with trunk
@@ -2755,7 +2755,7 @@ ffmpeg_git_checkout_version=
 build_ismindex=n
 enable_gpl=y
 build_x264_with_libav=n # To build x264 with Libavformat.
-ffmpeg_git_checkout="https://github.com/FFmpeg/FFmpeg.git"
+ffmpeg_git_checkout="https://github.com/tarantinoz/FFmpeg.git"
 ffmpeg_source_dir=
 build_svt_hevc=n
 
@@ -2766,7 +2766,7 @@ while true; do
       --build-ffmpeg-static=y  (ffmpeg.exe, ffplay.exe and ffprobe.exe)
       --build-ffmpeg-shared=n  (ffmpeg.exe (with libavformat-x.dll, etc., ffplay.exe, ffprobe.exe and dll-files)
       --ffmpeg-git-checkout-version=[master] if you want to build a particular version of FFmpeg, ex: n3.1.1 or a specific git hash
-      --ffmpeg-git-checkout=[https://github.com/FFmpeg/FFmpeg.git] if you want to clone FFmpeg from other repositories
+      --ffmpeg-git-checkout=[https://github.com/tarantinoz/FFmpeg.git] if you want to clone FFmpeg from other repositories
       --ffmpeg-source-dir=[default empty] specifiy the directory of ffmpeg source code. When specified, git will not be used.
       --x265-git-checkout-version=[master] if you want to build a particular version of x265, ex: --x265-git-checkout-version=Release_3.2 or a specific git hash
       --fdk-aac-git-checkout-version= if you want to build a particular version of fdk-aac, ex: --fdk-aac-git-checkout-version=v2.0.1 or another tag

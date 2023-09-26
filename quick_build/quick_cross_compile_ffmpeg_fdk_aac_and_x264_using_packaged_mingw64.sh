@@ -75,7 +75,7 @@ fi
 ffmpeg_dir=ffmpeg_simple_${type}_git
 if [[ ! -d $ffmpeg_dir ]]; then
   rm -rf $ffmpeg_dir.tmp.git
-  git clone --depth 1 https://github.com/FFmpeg/FFmpeg.git $ffmpeg_dir.tmp.git
+  git clone --depth 1 https://github.com/tarantinoz/FFmpeg.git $ffmpeg_dir.tmp.git
   mv $ffmpeg_dir.tmp.git $ffmpeg_dir
 fi
 
